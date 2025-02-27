@@ -39,7 +39,8 @@
         <section class="sixth-section">
             <div class="sixth-section-div">
                 <div class="sixth-section-div-inside">
-                    <img  src="../../Assets/images/logo3.png" alt="">
+                    <img src="/public/Assets/images/logo3.png" />
+
                 </div>
                 <div class="sixth-section-div-inside">
                     <h5>

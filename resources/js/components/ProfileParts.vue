@@ -2,7 +2,7 @@
     <section class="header-section">
       <div class="header">
         <div class="header-logo">
-          <img class="header-logo-image" src="../../Assets/images/logo.png" alt="Logo">
+          <img src="/public/Assets/images/logo.png" />
         </div>
         <div class="header-menu">
           <div class="header-menu-1">
@@ -30,7 +30,7 @@
               <div class="header-signup1">
                 <a href="registration.html">
                   <span>
-                    <img style="margin-bottom: -5px;" class="button-icon" src="../../Assets/images/paw-print_11170863.png">
+                    <img src="/public/Assets/images/paw-print_11170863.png" />
                   </span>
                 </a>
                 <div>
