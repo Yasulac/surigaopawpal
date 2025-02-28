@@ -777,7 +777,7 @@ export default {
     };
   },
   mounted() {
-    const userId = this.$route.params.pet_id; // Get userId from the route parameters
+    const userId = this.$route.params.id; // Get userId from the route parameters
     this.getDogDetails(userId);
   },
   methods: {

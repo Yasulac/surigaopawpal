@@ -13,7 +13,5 @@ class RehomingRequest extends Model
     protected $table = 'rehoming_requests';
 
     // Define the fillable attributes
-    protected $fillable = [
-        'dog.name', 'age', 'breed', 'sex', 'size','user_id' // Add other fields as needed
-    ];
+    protected $fillable = ['user_id', 'dog_name', 'age', 'breed', 'sex', 'size', 'profile_picture'];
 }

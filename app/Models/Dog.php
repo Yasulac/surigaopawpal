@@ -8,6 +8,6 @@ class Dog extends Model
 {
     //
     protected $fillable = [
-        'dog.name', 'age', 'breed', 'sex', 'size', 'profile_image',
+        'dog_name', 'age', 'breed', 'sex', 'size', 'profile_image',
     ];
 }

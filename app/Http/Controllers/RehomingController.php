@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\RehomingRequest; // RehomingRequest model
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RehomingController extends Controller
 {
     public function store(Request $request)
     {
         // Ensure the user is authenticated
-        $user = auth()->user();
+        $user = Auth::user(); // Ensure this returns the logged-in user
     
         // Check if the user is authenticated
         if (!$user) {
@@ -39,7 +40,7 @@ class RehomingController extends Controller
     
         // Create a new rehoming request and associate it with the authenticated user
         $rehomingRequest = RehomingRequest::create([
-            'user_id' => $user->id,  // Save authenticated user ID
+            'user_id' => $user->user_id,  // Save authenticated user ID
             'dog_name' => $validatedData['dog_name'],
             'age' => $validatedData['age'],
             'breed' => $validatedData['breed'],
@@ -52,7 +53,18 @@ class RehomingController extends Controller
             'message' => 'Rehoming request created successfully',
             'data' => $rehomingRequest
         ]);
+        
+        
     }
-    
+    public function index()
+{
+    $rehomingRequests = RehomingRequest::all(); // Fetch all records
+    return response()->json($rehomingRequests);
+}
+public function show($id) {
+    return RehomingRequest::findOrFail($id);
+}
+
+
 
 }

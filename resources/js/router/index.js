@@ -38,12 +38,16 @@ const router = createRouter({
     { path: '/adminsignupview', name: 'AdminSignUpView', component: AdminSignUpView },
     { path: '/adminsigninview', name: 'AdminSignInView', component: AdminSignInView },
     { path: '/profilepetview', name: 'ProfilePetView', component: ProfilePetView },
-    { path: '/adoption-form/:pet_id', name: 'AdoptionFormView', component: AdoptionFormView, props: true },
+    { path: '/adoption-form/:id', name: 'AdoptionFormView', component: AdoptionFormView, props: true },
     { path: '/contactusview', name: 'ContactUsView', component: ContactUsView },
     { path: '/profileview', name: 'ProfileView', component: ProfileView },
     { path: '/admin/users/:id/edit', name: "UserEdit", component: UserEdit },
     { path: '/admin/users/create', name: "UserCreate", component: UserCreate },
-    { path: '/pet/:pet_id', name: 'PetProfile', component: () => import('@/views/ProfilePetView.vue') }
+    {
+      path: '/pet/:id',
+      name: 'ProfilePetView',
+      component: ProfilePetView
+    }  
   ]
 })
 

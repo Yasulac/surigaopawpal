@@ -14,7 +14,7 @@ Route::post('register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']); // No authentication needed for registration
 Route::middleware('auth:sanctum')->post('/rehoming', [RehomingController::class, 'store']);
-Route::middleware('auth:sanctum')->get('/rehoming', [RehomingController::class, 'index']);
+Route::middleware('auth:sanctum')->get('/rehoming', [RehomingController::class, 'store']);
 // Logout route - requires authentication
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
 
@@ -32,7 +32,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/rehoming', [RehomingController::class, 'store']);
-    Route::get('/rehoming', [RehomingController::class, 'index']); // Fetch all submitted dogs
+    Route::get('/rehoming', [RehomingController::class, 'store']); // Fetch all submitted dogs
     Route::get('/submitted-dog', function (Request $request) {
         return response()->json(['dog' => $request->user()->submittedDog]);
     });
@@ -52,3 +52,5 @@ Route::options('{any}', function () {
 })->where('any', '.*');
 
 Route::middleware('auth:sanctum')->post('/logout', [AuthController::class, 'logout']);
+Route::get('/rehoming', [RehomingController::class, 'index']); // Add this
+Route::get('/rehoming/{id}', [RehomingController::class, 'show']);
